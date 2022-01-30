@@ -1,6 +1,8 @@
 package com.victorlobato.bankapi
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.victorlobato.bankapi.model.Account
+import com.victorlobato.bankapi.repository.AccountRepository
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

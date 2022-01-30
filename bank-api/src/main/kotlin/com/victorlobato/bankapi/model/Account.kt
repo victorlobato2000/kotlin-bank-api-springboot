@@ -1,4 +1,4 @@
-package com.victorlobato.bankapi
+package com.victorlobato.bankapi.model
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
