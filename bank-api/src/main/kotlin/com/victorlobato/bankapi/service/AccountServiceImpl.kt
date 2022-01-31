@@ -3,11 +3,20 @@ package com.victorlobato.bankapi.service
 import com.victorlobato.bankapi.model.Account
 import com.victorlobato.bankapi.repository.AccountRepository
 import org.springframework.stereotype.Service
+import org.springframework.util.Assert
 import java.util.*
 
 @Service
 class AccountServiceImpl (private val repository: AccountRepository) : AccountService {
     override fun create(account: Account): Account {
+        Assert.hasLength(account.name, "[Name] cannot be empty")
+        Assert.isTrue(account.name.length >= 5, "[Name] should be 5 characters")
+
+        Assert.hasLength(account.document, "[Document] cannot be empty")
+        Assert.isTrue(account.document.length >= 11, "[Document] should be 11 characters")
+
+        Assert.hasLength(account.phone, "[Phone] cannot be empty")
+        Assert.isTrue(account.phone.length >= 11, "[Phone] should be 11 characters")
         return repository.save(account)
     }
 
